@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang HK'}
+    span.s1 {font: 12.0px 'PingFang HK'}
+    span.s2 {font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">import React from 'react';</p>
+<p class="p1">import {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>Shield, Umbrella, Wallet, MapPin, Calendar,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>MessageCircle, Info, Download, Cpu, Target,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>Zap, Activity, Navigation, Hexagon, Layers</p>
+<p class="p1">} from 'lucide-react';</p>
+<p class="p2"><br></p>
+<p class="p1">const HudBracket = ({ position }) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const positions = {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tl: "top-8 left-8 border-t-2 border-l-2",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tr: "top-8 right-8 border-t-2 border-r-2",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>bl: "bottom-8 left-8 border-b-2 border-l-2",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>br: "bottom-8 right-8 border-b-2 border-r-2"</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return &lt;div className={`absolute w-8 h-8 border-blue-500/40 ${positions[position]} pointer-events-none`}&gt;&lt;/div&gt;;</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">const TaxPage = ({ children, pageNumber, subtitle }) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div className="relative w-full min-h-[1122px] bg-[#050507] text-white p-16 flex flex-col overflow-hidden border-b border-blue-900/30 print:border-none print:shadow-none mb-10 last:mb-0 shadow-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{/* Tech Background */}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="absolute inset-0 opacity-[0.1] pointer-events-none"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">         </span>style={{<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">           </span>backgroundImage: 'linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px)',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">           </span>backgroundSize: '40px 40px'<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">         </span>}}&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(30,58,138,0.1),transparent_70%)]"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;HudBracket position="tl" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;HudBracket position="tr" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;HudBracket position="bl" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;HudBracket position="br" /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>{/* HUD Header */}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="flex justify-between items-start z-10 mb-12 border-b border-blue-900/50 pb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(249,115,22,0.3)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;Navigation className="text-orange-500" size={24} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="text-xl font-black tracking-tighter text-white uppercase font-mono"&gt;TAX MAP &lt;span className="text-orange-500"&gt;2026&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="text-[10px] font-mono text-blue-400 tracking-[0.3em] uppercase"&gt;{subtitle || 'Sector Navigation'}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="text-right font-mono"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="text-sm text-gray-500 mb-1 tracking-widest"&gt;DATA_PACK_ID&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="text-3xl font-bold text-blue-500/80"&gt;0{pageNumber}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>{/* Main Content Area */}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="flex-1 z-10 flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{children}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>{/* HUD Footer */}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="mt-12 flex justify-between items-end z-10 pt-6 border-t border-blue-900/50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="flex gap-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="w-1 h-4 bg-blue-500 animate-pulse"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="w-1 h-4 bg-blue-500/50"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="w-1 h-4 bg-blue-500/20"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="text-[10px] font-mono text-gray-500 uppercase tracking-widest"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>System.Status: Encrypted // HK_TAX_LAYER_2025_26</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="text-[10px] font-mono text-orange-500/70 tracking-widest uppercase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>STRATEGIC_ADVISORY_NODE // KLAU</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">);</p>
+<p class="p2"><br></p>
+<p class="p1">const DataNode = ({ title, value, sub, color = "blue", icon: Icon }) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const theme = {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>blue: "border-blue-500/30 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.1)]",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>orange: "border-orange-500/30 text-orange-500 shadow-[0_0_20px_rgba(249,115,22,0.1)]",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className={`relative bg-[#0d0d12]/80 backdrop-blur-sm border rounded-xl p-6 transition-all hover:bg-blue-900/10 ${theme[color]}`}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="flex items-center gap-2 mb-2 opacity-70"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{Icon &amp;&amp; &lt;Icon size={14} /&gt;}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span className="text-[10px] font-bold uppercase tracking-widest font-mono"&gt;{title}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="text-4xl font-black tracking-tighter mb-1"&gt;{value}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{sub &amp;&amp; &lt;div className="text-[11px] text-gray-500 font-medium leading-tight"&gt;{sub}&lt;/div&gt;}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className={`absolute top-0 right-0 w-4 h-4 border-t border-r ${color === 'blue' ? 'border-blue-500/50' : 'border-orange-500/50'}`}&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">const App = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const handlePrint = () =&gt; window.print();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="bg-[#121214] min-h-screen py-12 print:p-0 print:bg-white font-sans selection:bg-orange-500 selection:text-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Floating Action Bar */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="fixed top-8 right-8 z-50 print:hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>onClick={handlePrint}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>className="group relative flex items-center gap-3 bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-8 rounded-xl shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all active:scale-95 overflow-hidden"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;Download size={24} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span className="text-lg uppercase tracking-tight"&gt;<span class="s1">導出</span> TAX MAP PDF&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="max-w-[850px] mx-auto"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>{/* PAGE 1: COVER */}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;TaxPage pageNumber={1} subtitle="Navigation.Initialize"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="flex flex-col justify-center h-full pt-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-3 text-orange-500 font-mono text-sm font-bold mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="w-2 h-2 bg-orange-500 animate-ping rounded-full"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span className="tracking-[0.4em] uppercase"&gt;Status: Priority Mission&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 className="text-[84px] font-black leading-[0.85] mb-10 tracking-tighter uppercase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span className="text-white block"&gt;2025/26&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)]"&gt;<span class="s1">慳稅神器</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;br /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span className="text-blue-500 text-6xl"&gt;<span class="s1">導航手冊</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="w-32 h-1 bg-blue-500 mb-10 shadow-[0_0_10px_rgba(59,130,246,0.5)]"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p className="text-xl text-gray-400 max-w-lg mb-20 leading-relaxed font-light"&gt;</p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">              </span></span>整合全港免稅額、扣稅項目及報稅關鍵時間表。<span class="s2">&lt;br /&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span className="text-white font-bold italic underline decoration-orange-500"&gt;<span class="s1">拒絕繳交智商稅，精準優化財富路徑。</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="flex items-center gap-8 bg-blue-900/10 border border-blue-500/20 p-6 rounded-2xl w-fit backdrop-blur-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="w-20 h-20 rounded-full border-2 border-orange-500 p-1 bg-gray-900"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{/* Advisor Headshot - Referencing the one from the QR image */}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                      </span>src="https://api.dicebear.com/7.x/avataaars/svg?seed=Klau"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                      </span>alt="KLAU"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                      </span>className="w-full h-full object-cover"</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>onError={(e) =&gt; { e.target.style.display = 'none'; }}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span className="text-[10px] text-gray-500 font-mono"&gt;KLAU&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-4 border-[#050507] flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;Zap size={12} className="text-black" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="text-2xl font-black text-white tracking-tight italic uppercase"&gt;KLAU&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="text-blue-400 font-mono text-xs uppercase tracking-[0.2em] mt-1"&gt;Strategic Wealth Navigator&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/TaxPage&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>{/* PAGE 2: CHEAT SHEET */}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;TaxPage pageNumber={2} subtitle="Resource.Allocation"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="pt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-5xl font-black mb-12 flex items-baseline gap-4 italic uppercase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span><span class="s1">免稅額</span> &lt;span className="text-blue-500 text-3xl not-italic font-mono underline decoration-blue-500/30"&gt;<span class="s1">速查表</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="grid grid-cols-2 gap-6 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;DataNode title="<span class="s1">基本免稅額</span> (<span class="s1">個人</span>)" value="$132,000" sub="<span class="s1">單身人士基礎稅務防線</span>" color="blue" icon={Cpu} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;DataNode title="<span class="s1">已婚人士免稅額</span>" value="$264,000" sub="<span class="s1">合計報稅雙倍額度</span>" color="blue" icon={Shield} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;DataNode title="<span class="s1">子女免稅額</span> (<span class="s1">每名</span>)" value="$130,000" sub="<span class="s1">出生年度額外加</span> $130,000" color="orange" icon={Activity} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;DataNode title="<span class="s1">供養父母</span> (60+)" value="$50,000" sub="<span class="s1">同住再額外增加一倍至</span> $100k" color="orange" icon={MapPin} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;DataNode title="<span class="s1">供養父母</span> (55-59)" value="$25,000" sub="<span class="s1">同住再額外增加一倍至</span> $50k" color="orange" icon={MapPin} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;DataNode title="<span class="s1">單親免稅額</span>" value="$132,000" sub="<span class="s1">特定撫養條件下之隱藏節點</span>" color="blue" icon={Target} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="relative p-10 rounded-2xl bg-orange-500/5 border border-orange-500/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="absolute top-0 right-0 p-6 opacity-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;Hexagon size={80} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3 className="text-2xl font-black text-orange-500 mb-4 flex items-center gap-3 uppercase tracking-tighter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;Zap size={24} className="fill-orange-500" /&gt; <span class="s1">年度優惠：稅款寬減</span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p className="text-gray-300 text-lg leading-relaxed"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>2025/26 <span class="s1">年度預計維持</span> &lt;span className="text-white font-bold underline decoration-blue-500"&gt;100% <span class="s1">稅款寬減</span>&lt;/span&gt;<span class="s1">，上限為</span> &lt;span className="text-orange-400 font-mono font-bold text-2xl"&gt;$3,000&lt;/span&gt;<span class="s1">。這是系統預設的「資源回收」，務必確保已領取。</span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/TaxPage&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>{/* PAGE 3: THE TRINITY */}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;TaxPage pageNumber={3} subtitle="Artifact.Deployment"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="pt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-5xl font-black mb-4 italic uppercase"&gt;<span class="s1">三大</span> &lt;span className="text-blue-500"&gt;<span class="s1">「扣稅神器」</span>&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p className="text-gray-400 font-mono text-xs mb-12 tracking-widest uppercase opacity-60"&gt;High Efficiency Strategic Tools&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="border border-blue-900/30 rounded-2xl overflow-hidden bg-[#0d0d12]/60 backdrop-blur-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;table className="w-full text-left border-collapse"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;tr className="bg-blue-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th className="p-8 text-blue-400 font-mono text-xs uppercase tracking-widest border-b border-blue-900/30"&gt;<span class="s1">導航工具</span>&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th className="p-8 text-blue-400 font-mono text-xs uppercase tracking-widest border-b border-blue-900/30"&gt;<span class="s1">每年扣稅上限</span>&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;th className="p-8 text-blue-400 font-mono text-xs uppercase tracking-widest border-b border-blue-900/30"&gt;<span class="s1">核心戰略價值</span>&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;tbody className="divide-y divide-blue-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;tr className="hover:bg-blue-500/5 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td className="p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;div className="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;Shield className="text-orange-500" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span className="text-xl font-bold"&gt;<span class="s1">自願醫保</span> (VHIS)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td className="p-8 text-3xl font-black text-white font-mono"&gt;$8,000&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td className="p-8 text-sm text-gray-400 leading-relaxed"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span><span class="s1">保障大額醫療開支，同時為家人投保可疊加額度。</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td className="p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;div className="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;Umbrella className="text-orange-500" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span className="text-xl font-bold"&gt;<span class="s1">延期年金</span> (QDAP)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td className="p-8 text-3xl font-black text-white font-mono" rowSpan="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;div className="flex flex-col items-center border-l border-blue-500/30 pl-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span className="text-4xl text-orange-500"&gt;$60,000&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span className="text-[10px] text-gray-500 uppercase mt-2 font-mono"&gt;Combined Limit&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td className="p-8 text-sm text-gray-400 leading-relaxed border-b border-blue-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span><span class="s1">將稅款轉化為退休後的穩定現金流。</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;tr className="hover:bg-blue-500/5 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td className="p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;div className="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;Wallet className="text-orange-500" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span className="text-xl font-bold"&gt;MPF <span class="s1">自願供款</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td className="p-8 text-sm text-gray-400 leading-relaxed"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span><span class="s1">最快、最直接的慳稅路徑，操作門檻最低。</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="mt-12 flex gap-8 items-center p-8 bg-blue-500/5 rounded-2xl border-l-4 border-blue-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;Layers className="text-blue-500 shrink-0" size={40} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div className="text-xl font-bold text-white mb-2 italic underline decoration-blue-500/20"&gt;<span class="s1">總監級策略</span> (Senior Insight)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;p className="text-gray-400 leading-relaxed"&gt;</p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                   </span></span>「神器」不只是工具，而是對沖未來開支的槓桿。如果你的稅率在<span class="s2"> 15% </span>或以上，每一分投入這些工具的錢，都等於即時獲得<span class="s2"> 15% </span>的無風險回報。</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/TaxPage&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>{/* PAGE 4: HIDDEN TIPS */}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;TaxPage pageNumber={4} subtitle="Hidden.Paths.Discovery"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="pt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-5xl font-black mb-12 italic uppercase"&gt;<span class="s1">隱藏版</span> &lt;span className="text-blue-500"&gt;<span class="s1">慳稅位</span>&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="space-y-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{[</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>title: "<span class="s1">解密：單親免稅額</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                  </span>desc: "</span>申請人必須在該年度內獨力或主要負責撫養子女。分居或離婚狀態下的法律定義會直接影響<span class="s2"> $132,000 </span>額度的激活。<span class="s2">"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>title: "<span class="s1">倍化器：父母同住條款</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>desc: "<span class="s1">只要父母年滿</span> 60 <span class="s1">歲且與你同住至少連續</span> 6 <span class="s1">個月，免稅額會從</span> $50,000 <span class="s1">瞬間倍增至</span> $100,000<span class="s1">。這是一個必須解鎖的高級節點。</span>"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>title: "<span class="s1">新生兒福利：出生年度加給</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>desc: "<span class="s1">子女出生當年，除了基本的</span> $130,000<span class="s1">，會額外再加</span> $130,000<span class="s1">。總共</span> $260,000 <span class="s1">的免稅額足以大幅降低當年的暫繳稅。</span>"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                  </span>title: "<span class="s1">路徑選擇：租金</span> vs <span class="s1">按揭利息</span>",<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                  </span>desc: "</span>住宅租金扣除上限為<span class="s2"> $100,000</span>。對於無殼或新婚租樓人士，這是一個比按揭利息更直接的節省路徑。<span class="s2">"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>].map((tip, i) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div key={i} className="group flex gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div className="flex flex-col items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="w-10 h-10 rounded-lg bg-blue-500/20 border border-blue-500 flex items-center justify-center text-blue-400 font-mono font-bold shadow-[0_0_15px_rgba(59,130,246,0.3)]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>0{i+1}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{i !== 3 &amp;&amp; &lt;div className="flex-1 w-[2px] bg-gradient-to-b from-blue-500/50 to-transparent mt-2"&gt;&lt;/div&gt;}</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div className="pb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 className="text-2xl font-black text-white mb-3 tracking-tight group-hover:text-orange-500 transition-colors italic"&gt;{tip.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p className="text-gray-400 leading-relaxed font-light"&gt;{tip.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/TaxPage&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>{/* PAGE 5: TIMELINE */}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;TaxPage pageNumber={5} subtitle="Temporal.Mapping"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="pt-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 className="text-5xl font-black mb-16 italic uppercase"&gt;<span class="s1">報稅</span> / <span class="s1">交稅</span> &lt;span className="text-blue-500 text-3xl font-mono"&gt;<span class="s1">時間地圖</span>&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="relative border-l-2 border-dashed border-blue-900/50 ml-10 pl-16 py-4 space-y-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{[</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ m: "05", label: "MAY", event: "<span class="s1">發出報稅表</span> (<span class="s1">綠色炸彈</span>)", sub: "<span class="s1">數據輸入階段。網上報稅可自動延長</span> 1 <span class="s1">個月。</span>", color: "blue" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ m: "06", label: "JUN", event: "<span class="s1">提交報稅表截止</span>", sub: "<span class="s1">逾期提交會導致系統產生</span> 10% <span class="s1">罰款風險。</span>", color: "blue" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ m: "10", label: "OCT-DEC", event: "<span class="s1">收到評稅通知書</span> (<span class="s1">稅單</span>)", sub: "<span class="s1">核對數據。如需反對，必須在</span> 1 <span class="s1">個月內提出。</span>", color: "orange" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ m: "01", label: "JAN", event: "<span class="s1">繳付第一期稅款</span>", sub: "<span class="s1">支付本年度餘額及暫繳稅的</span> 75%<span class="s1">。</span>", color: "orange" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ m: "04", label: "APR", event: "<span class="s1">繳付第二期稅款</span>", sub: "<span class="s1">完成本年度最後</span> 25% <span class="s1">暫繳稅支付。</span>", color: "orange" }</p>
+<p class="p1"><span class="Apple-converted-space">              </span>].map((step, i) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div key={i} className="relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div className={`absolute -left-[76px] top-0 w-4 h-4 rounded-full border-2 ${step.color === 'blue' ? 'bg-blue-500 border-white' : 'bg-orange-500 border-white'} shadow-[0_0_15px_currentColor]`}&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div className="flex items-baseline gap-6 mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className="text-4xl font-black font-mono text-gray-700"&gt;{step.m}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div className={`text-2xl font-black italic uppercase ${step.color === 'blue' ? 'text-blue-400' : 'text-orange-400'}`}&gt;{step.event}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;p className="text-gray-500 text-sm max-w-sm font-light"&gt;{step.sub}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/TaxPage&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>{/* PAGE 6: CTA &amp; QR CODE */}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;TaxPage pageNumber={6} subtitle="Mission.Closure"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div className="h-full flex flex-col items-center justify-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="mb-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;div className="w-20 h-1 bg-orange-500 mx-auto mb-10 shadow-[0_0_20px_rgba(249,115,22,0.8)]"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;h2 className="text-[52px] font-black leading-tight italic tracking-tighter uppercase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">稅務規劃因人而異，</span>&lt;br /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>EXCEL <span class="s1">幫到你計算，</span>&lt;br /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span className="text-orange-500 not-italic underline decoration-orange-500/30"&gt;<span class="s1">但我可以幫你執行。</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;div className="w-20 h-1 bg-orange-500 mx-auto mt-10 shadow-[0_0_20px_rgba(249,115,22,0.8)]"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>{/* INTEGRATED QR CODE FROM UPLOADED IMAGE */}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="group relative p-2 bg-gradient-to-br from-blue-500 to-orange-500 rounded-3xl mb-12 shadow-[0_0_50px_rgba(59,130,246,0.3)] transform transition-transform hover:scale-105 duration-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;div className="bg-white p-4 rounded-[22px] overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div className="w-56 h-56 bg-white flex items-center justify-center relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                      </span>src="IMG_6192.jpg"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                      </span>alt="WhatsApp QR Code KLAU"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                      </span>className="w-full h-full object-contain"</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>onError={(e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>e.target.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>e.target.parentElement.innerHTML = '&lt;div class="flex flex-col items-center justify-center text-black font-black uppercase text-center"&gt;&lt;span class="text-xs"&gt;SCAN TO CONNECT&lt;/span&gt;&lt;span class="text-2xl text-orange-600"&gt;KLAU&lt;/span&gt;&lt;span class="text-[8px] opacity-40 mt-2 tracking-tighter"&gt;WHATSAPP CONTACT&lt;/span&gt;&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>}}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>{/* Decorative Tech Corners for the QR Card */}</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-white pointer-events-none"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-white pointer-events-none"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 className="text-2xl font-black mb-6 tracking-tight uppercase italic"&gt;<span class="s1">立即掃描：預約</span> 15 <span class="s1">分鐘「稅務地圖診斷」</span>&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="flex gap-6 mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;div className="flex items-center gap-3 px-6 py-3 bg-blue-900/40 border border-blue-500/50 rounded-full text-blue-400 font-bold text-sm tracking-widest uppercase hover:bg-blue-500/20 transition-all cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;MessageCircle size={18} /&gt; WhatsApp <span class="s1">專線</span></p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;div className="flex items-center gap-3 px-6 py-3 bg-orange-900/40 border border-orange-500/50 rounded-full text-orange-500 font-bold text-sm tracking-widest uppercase hover:bg-orange-500/20 transition-all cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;Navigation size={18} /&gt; ZOOM <span class="s1">線上規劃</span></p>
+<p class="p1"><span class="Apple-converted-space">               </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="text-[10px] font-mono text-gray-600 uppercase tracking-[0.5em] mt-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">               </span>End of Navigation // Optimized by Senior Tax Advisor // KLAU</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/TaxPage&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Styles for print and custom typography */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;style dangerouslySetInnerHTML={{ __html: `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media print {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>body { background: white !important; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.bg-\[\#121214\] { background: white !important; padding: 0 !important; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.shadow-2xl, .shadow-\[0_0_30px_rgba\(249\,115\,22\,0\.4\)\] { shadow: none !important; box-shadow: none !important; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.max-w-\[850px\] { max-width: 100% !important; margin: 0 !important; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>div, h1, h2, p, span { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.print-hidden { display: none !important; }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>.bg-\[\#050507\] { background: #050507 !important; color: white !important; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@font-face {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-family: 'Noto Sans HK';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;700;900&amp;display=swap');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-family: 'Noto Sans HK', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>-webkit-font-smoothing: antialiased;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`}} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">export default App;</p>
+</body>
+</html>
